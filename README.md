@@ -197,15 +197,6 @@ newman run postman-collection.json -e postman-environment.json --insecure
 
 ---
 
-## 🎓 Author & Unit
-
-* Unit: **SIT331 Full Stack Development**
-* Task: **Practical Task 6.1 – Authentication & Authorization**
-* Trimester: T1 2025
-* Technologies: ASP.NET Core, Entity Framework Core, PostgreSQL
-
----
-
 ## 📚 Additional Resources
 
 * [Microsoft Docs – Authentication in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/)

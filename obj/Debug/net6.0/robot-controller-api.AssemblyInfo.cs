@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("robot-controller-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3a332da2475a29275af49e26305022f4d97cde3")]
 [assembly: System.Reflection.AssemblyProductAttribute("robot-controller-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("robot-controller-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

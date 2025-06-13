@@ -2,12 +2,20 @@ using System.Reflection;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using robot_controller_api.Authentication;
+using robot_controller_api.Persistence;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+// builder.Services.AddScoped<IRobotCommandDataAccess, RobotCommandADO>(); 
+// builder.Services.AddScoped<IMapDataAccess, MapADO>();
+// builder.Services.AddScoped<IRobotCommandDataAccess, RobotCommandRepository>();
+// builder.Services.AddScoped<IMapDataAccess, MapRepository>();
+builder.Services.AddScoped<IRobotCommandDataAccess, RobotCommandEF>(); 
+builder.Services.AddScoped<IMapDataAccess, MapEF>(); 
+builder.Services.AddScoped<RobotContext>(); 
 builder.Services.AddEndpointsApiExplorer(); 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -17,8 +25,8 @@ builder.Services.AddSwaggerGen(options =>
         Description = "New backend service that provides resources for the Moon robot simulator.",
         Contact = new Microsoft.OpenApi.Models.OpenApiContact
         {
-            Name = "Ashen Tharuka Desan Fernando",
-            Email = "s222448082@deakin.edu.au"
+            Name = "Rushen Dissanayaka",
+            Email = "disanayakarmrh32@gmail.com"
         }
     });
 

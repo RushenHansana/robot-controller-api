@@ -1,0 +1,57 @@
+{
+	"id": "09f6912a-a994-4145-ad29-fee018783d39",
+	"name": "Local",
+	"values": [
+		{
+			"key": "api-host",
+			"value": "localhost",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "port",
+			"value": "5148",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "id",
+			"value": "5",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "coordinate",
+			"value": "3-4",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "idu",
+			"value": "5",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "new-command-name",
+			"value": "MOVE FORWARD",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "new-command-description",
+			"value": "Moves robot ahead",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "new-command-move",
+			"value": "true",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2025-05-24T13:39:17.489Z",
+	"_postman_exported_using": "Postman/11.46.6"
+}

@@ -202,3 +202,15 @@ H:\Assignments\SIT331\331\6.1P\obj\Debug\net6.0\robot-controller-api.xml
 H:\Assignments\SIT331\331\6.1P\obj\Debug\net6.0\robot-controller-api.pdb
 H:\Assignments\SIT331\331\6.1P\obj\Debug\net6.0\robot-controller-api.genruntimeconfig.cache
 H:\Assignments\SIT331\331\6.1P\obj\Debug\net6.0\ref\robot-controller-api.dll
+C:\Users\rushe\codes\robot-controller-api\obj\Debug\net6.0\robot-controller-api.csproj.AssemblyReference.cache
+C:\Users\rushe\codes\robot-controller-api\obj\Debug\net6.0\robot-controller-api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rushe\codes\robot-controller-api\obj\Debug\net6.0\robot-controller-api.AssemblyInfoInputs.cache
+C:\Users\rushe\codes\robot-controller-api\obj\Debug\net6.0\robot-controller-api.AssemblyInfo.cs
+C:\Users\rushe\codes\robot-controller-api\obj\Debug\net6.0\robot-controller-api.csproj.CoreCompileInputs.cache
+C:\Users\rushe\codes\robot-controller-api\obj\Debug\net6.0\robot-controller-api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\rushe\codes\robot-controller-api\obj\Debug\net6.0\robot-controller-api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rushe\codes\robot-controller-api\obj\Debug\net6.0\robot-controller-api.sourcelink.json
+C:\Users\rushe\codes\robot-controller-api\obj\Debug\net6.0\robot-controller-api.dll
+C:\Users\rushe\codes\robot-controller-api\obj\Debug\net6.0\refint\robot-controller-api.dll
+C:\Users\rushe\codes\robot-controller-api\obj\Debug\net6.0\robot-controller-api.xml
+C:\Users\rushe\codes\robot-controller-api\obj\Debug\net6.0\robot-controller-api.pdb

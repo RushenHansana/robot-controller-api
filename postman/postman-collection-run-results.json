@@ -1,0 +1,410 @@
+{
+	"id": "272f1269-7dfb-40d9-a346-6d64dbcc2133",
+	"name": "SIT331",
+	"timestamp": "2025-05-24T13:39:51.172Z",
+	"collection_id": "40630877-d59849a9-8f0e-4ab4-b984-b338a878a7fe",
+	"folder_id": 0,
+	"environment_id": "40630877-09f6912a-a994-4145-ad29-fee018783d39",
+	"totalPass": 23,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-05-24T13:39:50.025Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "3ba7f060-ce52-4d63-a8c4-e8ab2e518910",
+			"name": "test",
+			"url": "localhost:5148/",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Response body is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Response body is not empty": true
+				}
+			]
+		},
+		{
+			"id": "b07979a6-4235-4707-8863-dfe5d2a9aa61",
+			"name": "robot-commands",
+			"url": "localhost:5148/robot-commands",
+			"time": 16,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Response is an array": true,
+				"Each robot command has required properties": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each robot command has required properties": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				16
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Response is an array": true,
+					"Each robot command has required properties": true
+				}
+			]
+		},
+		{
+			"id": "52585738-2396-48e2-a87c-70ff260f64f4",
+			"name": "move-commands",
+			"url": "localhost:5148/robot-commands/move",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Response is an array of move commands": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an array of move commands": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Response is an array of move commands": true
+				}
+			]
+		},
+		{
+			"id": "242a2e84-5c87-42ac-89b2-db12e5fdfe96",
+			"name": "read-commands",
+			"url": "localhost:5148/robot-commands/5",
+			"time": 2,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Response is an object with correct properties": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an object with correct properties": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Response is an object with correct properties": true
+				}
+			]
+		},
+		{
+			"id": "5b5ae836-96b8-4cc2-ad95-8cd466e1889e",
+			"name": "create-robot-command",
+			"url": "localhost:5148/robot-commands",
+			"time": 3,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is Created": true,
+				"Response body is not empty": true,
+				"Response body contains the newly created robot command": true,
+				"Test newly created command name": true,
+				"Check Location header (relative path)": true
+			},
+			"testPassFailCounts": {
+				"Status code is Created": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body contains the newly created robot command": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Test newly created command name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check Location header (relative path)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is Created": true,
+					"Response body is not empty": true,
+					"Response body contains the newly created robot command": true,
+					"Test newly created command name": true,
+					"Check Location header (relative path)": true
+				}
+			]
+		},
+		{
+			"id": "44a1d387-54a2-4570-96ba-538c948b6810",
+			"name": "update-robot-command",
+			"url": "localhost:5148/robot-commands/5",
+			"time": 2,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code is No Content": true,
+				"Response body should be empty for 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is No Content": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body should be empty for 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status code is No Content": true,
+					"Response body should be empty for 204": true
+				}
+			]
+		},
+		{
+			"id": "bcdef085-d4bf-4645-9bd1-dc80d0b159df",
+			"name": "read-robot-map",
+			"url": "localhost:5148/robot-map",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Response is an object with Size": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an object with Size": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Response is an object with Size": true
+				}
+			]
+		},
+		{
+			"id": "5c697da3-6349-469b-950b-92b9f4bb35a1",
+			"name": "read-coordinate",
+			"url": "localhost:5148/robot-map/3-4",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Response is boolean (true/false)": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is boolean (true/false)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Response is boolean (true/false)": true
+				}
+			]
+		},
+		{
+			"id": "707538ed-4ca9-4e2c-8466-104998081852",
+			"name": "update-map-size",
+			"url": "localhost:5148/robot-map",
+			"time": 2,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code is No Content": true,
+				"Response body should be empty for 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is No Content": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body should be empty for 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status code is No Content": true,
+					"Response body should be empty for 204": true
+				}
+			]
+		},
+		{
+			"id": "4b53f856-e88a-489f-8cb6-feef19435763",
+			"name": "this-one-should-fail",
+			"url": "localhost:5148/intentional-error",
+			"time": 2,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is Not Found": true
+			},
+			"testPassFailCounts": {
+				"Status code is Not Found": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status code is Not Found": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 42,
+	"collection": {
+		"requests": [
+			{
+				"id": "3ba7f060-ce52-4d63-a8c4-e8ab2e518910",
+				"method": "GET"
+			},
+			{
+				"id": "b07979a6-4235-4707-8863-dfe5d2a9aa61",
+				"method": "GET"
+			},
+			{
+				"id": "52585738-2396-48e2-a87c-70ff260f64f4",
+				"method": "GET"
+			},
+			{
+				"id": "242a2e84-5c87-42ac-89b2-db12e5fdfe96",
+				"method": "GET"
+			},
+			{
+				"id": "5b5ae836-96b8-4cc2-ad95-8cd466e1889e",
+				"method": "POST"
+			},
+			{
+				"id": "44a1d387-54a2-4570-96ba-538c948b6810",
+				"method": "PUT"
+			},
+			{
+				"id": "bcdef085-d4bf-4645-9bd1-dc80d0b159df",
+				"method": "GET"
+			},
+			{
+				"id": "5c697da3-6349-469b-950b-92b9f4bb35a1",
+				"method": "GET"
+			},
+			{
+				"id": "707538ed-4ca9-4e2c-8466-104998081852",
+				"method": "PUT"
+			},
+			{
+				"id": "4b53f856-e88a-489f-8cb6-feef19435763",
+				"method": "GET"
+			}
+		]
+	}
+}

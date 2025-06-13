@@ -1,0 +1,501 @@
+{
+	"info": {
+		"_postman_id": "d59849a9-8f0e-4ab4-b984-b338a878a7fe",
+		"name": "SIT331",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40630877"
+	},
+	"item": [
+		{
+			"name": "test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is OK\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is not empty\", () => {\r",
+							"    const resText = pm.response.text();\r",
+							"    pm.expect(resText).to.not.be.empty;\r",
+							"    pm.expect(resText).to.include(\"Hello, Robot\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api-host}}:{{port}}/",
+					"host": [
+						"{{api-host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "robot-commands",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is OK\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an array\", () => {\r",
+							"    pm.expect(pm.response.json()).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Each robot command has required properties\", () => {\r",
+							"    const cmds = pm.response.json();\r",
+							"    cmds.forEach(cmd => {\r",
+							"        pm.expect(cmd).to.have.property('id');\r",
+							"        pm.expect(cmd).to.have.property('command');\r",
+							"        pm.expect(cmd).to.have.property('isMoveCommand');\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{api-host}}:{{port}}/robot-commands",
+					"host": [
+						"{{api-host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"robot-commands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "move-commands",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is OK\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an array of move commands\", () => {\r",
+							"    const cmds = pm.response.json();\r",
+							"    pm.expect(cmds).to.be.an('array');\r",
+							"    cmds.forEach(cmd => {\r",
+							"        pm.expect(cmd).to.have.property('isMoveCommand', true);\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api-host}}:{{port}}/robot-commands/move",
+					"host": [
+						"{{api-host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"robot-commands",
+						"move"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read-commands",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is OK\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an object with correct properties\", () => {\r",
+							"    const cmd = pm.response.json();\r",
+							"    pm.expect(cmd).to.be.an('object');\r",
+							"    pm.expect(cmd).to.have.property('id');\r",
+							"    pm.expect(cmd).to.have.property('command');\r",
+							"    pm.expect(cmd).to.have.property('isMoveCommand');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api-host}}:{{port}}/robot-commands/{{id}}",
+					"host": [
+						"{{api-host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"robot-commands",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-robot-command",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Check status code\r",
+							"pm.test(\"Status code is Created\", function () { \r",
+							"    pm.response.to.have.status(201); \r",
+							"}); \r",
+							"\r",
+							"// Check response body is not empty and is JSON\r",
+							"pm.test(\"Response body is not empty\", function () { \r",
+							"    pm.response.to.have.jsonBody(); \r",
+							"    pm.expect(pm.response.json()).to.not.be.null; \r",
+							"    pm.expect(pm.response.json()).to.not.be.undefined; \r",
+							"}); \r",
+							"\r",
+							"// Check required properties in the response\r",
+							"pm.test(\"Response body contains the newly created robot command\", function () { \r",
+							"    var command = pm.response.json(); \r",
+							"    pm.expect(command).to.have.property('id'); \r",
+							"    pm.expect(command).to.have.property('command'); \r",
+							"    pm.expect(command).to.have.property('isMoveCommand'); \r",
+							"}); \r",
+							"\r",
+							"// Check if command name matches environment variable\r",
+							"pm.test(\"Test newly created command name\", function () { \r",
+							"    var command = pm.response.json(); \r",
+							"    var expectedName = pm.variables.get('new-command-name'); \r",
+							"    console.log(\"Expected Name:\", expectedName); \r",
+							"    console.log(\"Actual Name:\", command.command); \r",
+							"    pm.expect(command.command).to.equal(expectedName); \r",
+							"}); \r",
+							"\r",
+							"pm.test(\"Check Location header (relative path)\", function () { \r",
+							"    pm.response.to.have.header(\"Location\"); \r",
+							"    var command = pm.response.json(); \r",
+							"    var expectedPath = '/robot-commands/' + command.id;\r",
+							"    var actualLocation = pm.response.headers.get('Location');\r",
+							"    console.log(\"Expected Location Header:\", expectedPath); \r",
+							"    console.log(\"Actual Location Header:\", actualLocation); \r",
+							"    pm.expect(actualLocation).to.eql(expectedPath); \r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"command\": \"{{new-command-name}}\",\r\n    \"isMoveCommand\": {{new-command-move}}\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api-host}}:{{port}}/robot-commands",
+					"host": [
+						"{{api-host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"robot-commands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-robot-command",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is No Content\", () => {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"pm.test(\"Response body should be empty for 204\", function () {\r",
+							"    pm.expect(pm.response.text()).to.eql('');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Command\": \"JUMP-EDITED\",\r\n    \"IsMoveCommand\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api-host}}:{{port}}/robot-commands/{{idu}}",
+					"host": [
+						"{{api-host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"robot-commands",
+						"{{idu}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read-robot-map",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is OK\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an object with Size\", () => {\r",
+							"    const map = pm.response.json();\r",
+							"    pm.expect(map).to.be.an('object');\r",
+							"    pm.expect(map).to.have.property('size');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{api-host}}:{{port}}/robot-map",
+					"host": [
+						"{{api-host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"robot-map"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read-coordinate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is OK\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is boolean (true/false)\", () => {\r",
+							"    const result = pm.response.json();\r",
+							"    pm.expect(typeof result).to.eql('boolean');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api-host}}:{{port}}/robot-map/{{coordinate}}",
+					"host": [
+						"{{api-host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"robot-map",
+						"{{coordinate}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-map-size",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is No Content\", () => {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"pm.test(\"Response body should be empty for 204\", function () {\r",
+							"    pm.expect(pm.response.text()).to.eql('');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Size\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api-host}}:{{port}}/robot-map",
+					"host": [
+						"{{api-host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"robot-map"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "this-one-should-fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is Not Found\", () => {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api-host}}:{{port}}/intentional-error",
+					"host": [
+						"{{api-host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"intentional-error"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
